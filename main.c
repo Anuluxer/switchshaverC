@@ -27,6 +27,6 @@ int main(int argc, char **argv) {
     while ((unsigned char)fgetc(fptr) != 255 || (unsigned char)fgetc(fptr) != 255 || (unsigned char)fgetc(fptr) != 255 || (unsigned char)fgetc(fptr) != 255) {
         fseeko64(fptr, 1ULL, SEEK_CUR);
     }
-    _chsize_s(_fileno(fptr), ftello64(fptr));
+    _chsize_s(_fileno(fptr), ftello64(fptr) + 100);
     return 0;
 }
